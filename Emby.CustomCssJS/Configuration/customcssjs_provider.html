@@ -4,60 +4,77 @@
     <title>Custom Css and JavaScript</title>
 </head>
 <body>
-    <div id="customcssjsConfigurationPage" data-role="page" class="page type-interior pluginConfigurationPage" data-controller="__plugin/customcssjs_providerjs" data-helpurl="https://github.com/Shurelol/Emby.CustomCssJS" data-title="${CustomCssJS Provider}">
-        <div data-role="content">
-            <div class="content-primary">
+<div class="page type-interior pluginConfigurationPage" data-controller="__plugin/customcssjs_providerjs" data-helpurl="https://github.com/Shurelol/Emby.CustomCssJS"
+     data-role="page" data-title="${CustomCssJS Provider}"
+     id="customcssjsConfigurationPage">
+    <div data-role="content">
+        <div class="content-primary">
 
-                <form id="customcssjsConfigurationForm" class="padded-top">
+            <form class="padded-top" id="customcssjsConfigurationForm">
 
-                    <div class="sectionTitleContainer sectionTitleContainer-cards">
-                        <h2 class="sectionTitle sectionTitle-cards">
-                            <span>${Custom JavaScript}</span>
-                        </h2>
-                        <button is="emby-button" id="customjsAddBtn" value="0" type="button" class="raised raised-mini btnAddDevice submit sectionTitleButton emby-button emby-button-backdropfilter raised-backdropfilter" style="margin-left:1em;">
-                            <i class="md-icon button-icon button-icon button-icon-left">add</i>
-                            <span>${Add}</span>
-                        </button>
-                    </div>
-                    <div class="fieldDescription" style="margin-left: 0.5rem; margin-top: 1rem">${Provided for All users}</div>
-                    <br>
+                <div class="sectionTitleContainer sectionTitleContainer-cards">
+                    <h2 class="sectionTitle sectionTitle-cards">
+                        <span>${Custom JavaScript}</span>
+                    </h2>
+                    <button class="raised raised-mini btnAddDevice submit sectionTitleButton emby-button emby-button-backdropfilter raised-backdropfilter" id="customjsAddBtn" is="emby-button" style="margin-left:1em;"
+                            type="button"
+                            value="0">
+                        <i class="md-icon button-icon button-icon button-icon-left">add</i>
+                        <span>${Add}</span>
+                    </button>
+                </div>
+                <div class="fieldDescription" style="margin-left: 0.5rem; margin-top: 1rem">${Provided for All users}
+                </div>
+                <br>
 
-                    <div id="customjsList" is="emby-itemscontainer" class="itemsContainer flex-direction-column flex flex-grow"></div>
-                    <br>
-                    <br>
+                <div class="itemsContainer flex-direction-column flex flex-grow" id="customjsList"
+                     is="emby-itemscontainer"></div>
+                <br>
+                <br>
 
-                    <div class="sectionTitleContainer sectionTitleContainer-cards">
-                        <h2 class="sectionTitle sectionTitle-cards">
-                            <span>${Custom Css}</span>
-                        </h2>
-                        <button is="emby-button" id="customcssAddBtn" value="0" type="button" class="raised raised-mini btnAddDevice submit sectionTitleButton emby-button emby-button-backdropfilter raised-backdropfilter" style="margin-left:1em;">
-                            <i class="md-icon button-icon button-icon button-icon-left">add</i>
-                            <span>${Add}</span>
-                        </button>
-                    </div>
-                    <div class="fieldDescription" style="margin-left: 0.5rem; margin-top: 1rem">${Provided for All users}</div>
-                    <br>
+                <div class="sectionTitleContainer sectionTitleContainer-cards">
+                    <h2 class="sectionTitle sectionTitle-cards">
+                        <span>${Custom Css}</span>
+                    </h2>
+                    <button class="raised raised-mini btnAddDevice submit sectionTitleButton emby-button emby-button-backdropfilter raised-backdropfilter" id="customcssAddBtn" is="emby-button" style="margin-left:1em;"
+                            type="button"
+                            value="0">
+                        <i class="md-icon button-icon button-icon button-icon-left">add</i>
+                        <span>${Add}</span>
+                    </button>
+                </div>
+                <div class="fieldDescription" style="margin-left: 0.5rem; margin-top: 1rem">${Provided for All users}
+                </div>
+                <br>
 
-                    <div id="customcssList" is="emby-itemscontainer" class="itemsContainer flex-direction-column flex flex-grow"></div>
-                    <br>
+                <div class="itemsContainer flex-direction-column flex flex-grow" id="customcssList"
+                     is="emby-itemscontainer"></div>
+                <br>
 
 
-                    <div id="customcssjsTemplate" class="listItem focusable listItem-hoverable listItem-withContentWrapper hide">
-                        <div class="listItem-content listItemContent-touchzoom listItem-border">
-                            <i class="listItemIcon md-icon customcssjsState"></i>
-                            <div class="listItemBody itemAction">
-                                <div class="listItemBodyText listItemBodyText-nowrap listItemBodyText-lf customcssjsName"></div>
-                                <div class="listItemBodyText listItemBodyText-nowrap listItemBodyText-lf listItemBodyText-secondary customcssjsDescription"></div>
-                                <div class="listItemBodyText listItemBodyText-nowrap listItemBodyText-lf listItemBodyText-secondary customcssjsDate"></div>
-                            </div>
-                            <button type="button" is="paper-icon-button-light" class="listItemButton itemAction md-icon paper-icon-button-light customcssjsEditBtn">edit</button>
-                            <button type="button" is="paper-icon-button-light" class="listItemButton itemAction md-icon paper-icon-button-light customcssjsDelBtn">delete</button>
+                <div class="listItem focusable listItem-hoverable listItem-withContentWrapper hide"
+                     id="customcssjsTemplate">
+                    <div class="listItem-content listItemContent-touchzoom listItem-border">
+                        <i class="listItemIcon md-icon customcssjsState"></i>
+                        <div class="listItemBody itemAction">
+                            <div class="listItemBodyText listItemBodyText-nowrap listItemBodyText-lf customcssjsName"></div>
+                            <div class="listItemBodyText listItemBodyText-nowrap listItemBodyText-lf listItemBodyText-secondary customcssjsDescription"></div>
+                            <div class="listItemBodyText listItemBodyText-nowrap listItemBodyText-lf listItemBodyText-secondary customcssjsDate"></div>
                         </div>
+                        <button class="listItemButton itemAction md-icon paper-icon-button-light customcssjsEditBtn" is="paper-icon-button-light"
+                                type="button">
+                            edit
+                        </button>
+                        <button class="listItemButton itemAction md-icon paper-icon-button-light customcssjsDelBtn" is="paper-icon-button-light"
+                                type="button">
+                            delete
+                        </button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-
     </div>
+
+</div>
 </body>
 </html>

@@ -8,9 +8,8 @@ namespace Emby.CustomCssJS
 {
     public class CustomCssJSPluginEntryPoint : IServerEntryPoint
     {
-        public static CustomCssJSPluginEntryPoint Instance { get; private set; }
-        private readonly string _uiPath;
         private readonly ILogger _logger;
+        private readonly string _uiPath;
 
         public CustomCssJSPluginEntryPoint(IServerApplicationPaths p, ILogManager lm)
         {
@@ -18,14 +17,20 @@ namespace Emby.CustomCssJS
             _logger = lm.GetLogger("CustomCssJs");
         }
 
+        public static CustomCssJSPluginEntryPoint Instance { get; private set; }
+
         public void Run()
         {
             CreateJs();
             Inject();
         }
 
+        public void Dispose()
+        {
+        }
+
         /// <summary>
-        /// 检测 modules/CustomCssJS.js 是否存在, 不存在时创建.
+        ///     检测 modules/CustomCssJS.js 是否存在, 不存在时创建.
         /// </summary>
         private void CreateJs()
         {
@@ -38,11 +43,12 @@ namespace Emby.CustomCssJS
             {
                 src?.CopyTo(target);
             }
+
             _logger.Info("Create CustomCssJS.js successfully");
         }
 
         /// <summary>
-        /// 向 app.js 注入加载 CustomCssJS.js 的代码.
+        ///     向 app.js 注入加载 CustomCssJS.js 的代码.
         /// </summary>
         private void Inject()
         {
@@ -60,10 +66,6 @@ namespace Emby.CustomCssJS
             content = content.Insert(index, inject);
             File.WriteAllText(jsPath, content);
             _logger.Info("Inject app.js successfully");
-        }
-
-        public void Dispose()
-        {
         }
     }
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediaBrowser.Model.Plugins;
 
 namespace Emby.CustomCssJS.Configuration
 
 {
-    public class PluginConfiguration : MediaBrowser.Model.Plugins.BasePluginConfiguration
+    public class PluginConfiguration : BasePluginConfiguration
 
     {
         public PluginConfiguration()
@@ -15,12 +11,10 @@ namespace Emby.CustomCssJS.Configuration
         {
             customjs = new Custom[] { };
             customcss = new Custom[] { };
-
         }
 
         public Custom[] customjs { get; set; }
         public Custom[] customcss { get; set; }
-
 
 
         public class Custom
@@ -31,9 +25,6 @@ namespace Emby.CustomCssJS.Configuration
             public string content { get; set; }
             public string date { get; set; }
             public string state { get; set; }
-
         }
-
     }
-
 }
