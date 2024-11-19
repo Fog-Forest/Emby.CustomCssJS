@@ -302,7 +302,7 @@ ace.define("ace/lib/es6-shim", ["require", "exports", "module"], function (requi
 
 });
 
-ace.define("ace/lib/fixoldbrowsers", ["require", "exports", "module", "ace/lib/es6-shim"], function (require, exports, module) {// vim:set ts=4 sts=4 sw=4 st:
+ace.define("ace/lib/fixoldbrowsers", ["require", "exports", "module", "ace/lib/es6-shim"], function (require, exports, module) { // vim:set ts=4 sts=4 sw=4 st:
     "use strict";
     require("./es6-shim");
 
@@ -761,13 +761,14 @@ ace.define("ace/lib/dom", ["require", "exports", "module", "ace/lib/useragent"],
 
 });
 
-ace.define("ace/lib/net", ["require", "exports", "module", "ace/lib/dom"], function (require, exports, module) {/*
- * based on code from:
- *
- * @license RequireJS text 0.25.0 Copyright (c) 2010-2011, The Dojo Foundation All Rights Reserved.
- * Available via the MIT or new BSD license.
- * see: http://github.com/jrburke/requirejs for details
- */
+ace.define("ace/lib/net", ["require", "exports", "module", "ace/lib/dom"], function (require, exports, module) {
+    /**
+     * based on code from:
+     *
+     * @license RequireJS text 0.25.0 Copyright (c) 2010-2011, The Dojo Foundation All Rights Reserved.
+     * Available via the MIT or new BSD license.
+     * see: http://github.com/jrburke/requirejs for details
+     */
     "use strict";
     var dom = require("./dom");
     exports.get = function (url, callback) {

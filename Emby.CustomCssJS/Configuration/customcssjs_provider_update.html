@@ -4,55 +4,54 @@
     <title>Custom Css and JavaScript</title>
 </head>
 <body>
-<div class="page type-interior pluginConfigurationPage" data-controller="__plugin/customcssjs_provider_updatejs" data-role="page"
-     data-title="${CustomCssJS Provider}" id="customcssjsConfigurationPage">
-    <div data-role="content">
-        <div class="content-primary">
+    <div id="customcssjsConfigurationPage" data-role="page" class="page type-interior pluginConfigurationPage" data-controller="__plugin/customcssjs_provider_updatejs" data-title="${CustomCssJS Provider}">
+        <div data-role="content">
+            <div class="content-primary">
 
-            <form class="padded-top" id="customcssjsConfigurationForm" style="max-width: unset">
-                <div>
-                    <button class="raised button-submit block" id="customjscssSaveBtn" is="emby-button" style="max-width: 90ch"
-                            type="submit">
-                        <i class="md-icon button-icon button-icon button-icon-left">save</i>
-                        <span>${Save}</span>
-                    </button>
-                    <br>
-                </div>
-
-                <div class="verticalSection">
-                    <div class="inputContainer" style="max-width: 90ch">
-                        <label class="inputLabel" for="customjscssName">${Name:}</label>
-                        <input class="emby-input" id="customjscssName" is="emby-input" step="1" type="text">
+                <form id="customcssjsConfigurationForm" class="padded-top" style="max-width: unset">
+                    <div>
+                        <button id="customjscssSaveBtn" is="emby-button" type="submit" class="raised button-submit block" style="max-width: 90ch">
+                                <i class="md-icon button-icon button-icon button-icon-left">save</i>
+                                <span>${Save}</span>
+                        </button>
                         <br>
+                    </div>
 
-                        <label class="inputLabel" for="customjscssDescription">${Description:}</label>
-                        <input class="emby-input" id="customjscssDescription" is="emby-input" step="1" type="text">
-                        <br>
+                    <div class="verticalSection">
+                        <div class="inputContainer" style="max-width: 90ch">
+                            <label class="inputLabel" for="customjscssName">${Name:}</label>
+                            <input id="customjscssName" is="emby-input" type="text" step="1" class="emby-input">
+                            <br>
 
-                        <label class="inputLabel" for="customjscssState">${State:}</label>
-                        <select class="emby-select" id="customjscssState" is="emby-select">
-                            <option value="off">${Off}</option>
-                            <option value="on">${On}</option>
-                            <option value="forced_on">${Forced On}</option>
-                        </select>
-                        <br>
+                            <label class="inputLabel" for="customjscssDescription">${Description:}</label>
+                            <input id="customjscssDescription" is="emby-input" type="text" step="1" class="emby-input">
+                            <br>
 
-                        <div class="warningBanner">
-                            <i class="md-icon warningBannerIcon">warning</i>
-                            <span class="warningBannerText">${Please Note Cross-Site Scripting Attacks}</span>
+                            <label class="inputLabel" for="customjscssState">${State:}</label>
+                            <select class="emby-select" id="customjscssState" style="height: 2em" is="emby-select">
+                                <option value="off">${Off}</option>
+                                <option value="on">${On}</option>
+                                <option value="forced_on">${Forced On}</option>
+                            </select>
+                            <br>
+
+                            <div class="warningBanner">
+                                <i class="md-icon warningBannerIcon">warning</i>
+                                <span class="warningBannerText">${Please Note Cross-Site Scripting Attacks}</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="inputContainer">
+                            <label class="inputLabel" for="customjscssContent">${Content:}</label>
+                            <div id="customjscssContent" style="min-height: 70em; z-index: 0"></div>
                         </div>
                     </div>
-
-
-                    <div class="inputContainer">
-                        <label class="inputLabel" for="customjscssContent">${Content:}</label>
-                        <div id="customjscssContent" style="min-height: 70em; z-index: 0"></div>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </body>
 </html>

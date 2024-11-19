@@ -40,7 +40,7 @@ namespace Emby.CustomCssJS
 
         public ImageFormat ThumbImageFormat => ImageFormat.Jpg;
 
-        //Display Thumbnail image for Plugin Catalogue  - you will need to change build action for thumb.jpg to embedded Resource
+        // Display Thumbnail image for Plugin Catalogue  - you will need to change build action for thumb.jpg to embedded Resource
         public Stream GetThumbImage()
         {
             var type = GetType();

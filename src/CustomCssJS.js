@@ -4,7 +4,7 @@ define([
 ], function (
   events,
   connectionManager,
-  ) {
+) {
   "use strict";
 
   return function () {
@@ -53,7 +53,7 @@ define([
         customServerConfig = JSON.parse(customServerConfig);
       }
       // get custom in Server
-      let customServer = config[`custom${type}`].filter(item => (item.state === "on" && customServerConfig.includes(item.name)) || item.state === "forced_on" );
+      let customServer = config[`custom${type}`].filter(item => (item.state === "on" && customServerConfig.includes(item.name)) || item.state === "forced_on");
 
       // get Config for Local
       let customLocalConfig = localStorage.getItem(`custom${type}LocalConfig`);
