@@ -1,5 +1,5 @@
-﻿using Emby.Features;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Emby.Features;
 
 namespace Emby.CustomCssJS
 {
@@ -7,14 +7,17 @@ namespace Emby.CustomCssJS
     {
         public const string StaticId = "customcssjs";
 
-        public List<FeatureInfo> GetFeatureInfos(string language) => new List<FeatureInfo>()
+        public List<FeatureInfo> GetFeatureInfos(string language)
         {
-          new FeatureInfo()
-          {
-            Id = "customcssjs",
-            Name = "Custom Css and JavaScript",
-            FeatureType = (FeatureType) 1
-          }
-        };
+            return new List<FeatureInfo>
+            {
+                new FeatureInfo
+                {
+                    Id = "customcssjs",
+                    Name = "Custom Css and JavaScript",
+                    FeatureType = (FeatureType)1
+                }
+            };
+        }
     }
 }
