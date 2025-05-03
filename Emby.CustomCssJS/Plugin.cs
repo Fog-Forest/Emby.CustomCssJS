@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Globalization;
 using Emby.CustomCssJS.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
@@ -63,17 +64,18 @@ namespace Emby.CustomCssJS
 
         public IEnumerable<PluginPageInfo> GetPages()
         {
+            var currentCulture = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
             return new[]
             {
                 new PluginPageInfo
                 {
                     Name = "customcssjs",
-                    DisplayName = "Custom Css and JavaScrip",
+                    DisplayName = currentCulture == "zh" ? "个性化" : "Custom Css and JavaScrip", // 根据语言切换
                     EmbeddedResourcePath = GetType().Namespace + ".Configuration.customcssjs.html",
                     EnableInMainMenu = false,
                     EnableInUserMenu = true,
                     IsMainConfigPage = true,
-                    MenuIcon = "tune",
+                    MenuIcon = "opacity",
                     FeatureId = "customcssjs"
                 },
                 new PluginPageInfo
@@ -95,13 +97,13 @@ namespace Emby.CustomCssJS
                 new PluginPageInfo
                 {
                     Name = "customcssjs_provider",
-                    DisplayName = "CustomCssJS Provider",
+                    DisplayName = currentCulture == "zh" ? "个性化管理" : "CustomCssJS Provider", // 根据语言切换
                     EmbeddedResourcePath = GetType().Namespace + ".Configuration.customcssjs_provider.html",
                     EnableInMainMenu = true,
                     EnableInUserMenu = false,
                     IsMainConfigPage = true,
                     MenuSection = "server",
-                    MenuIcon = "settings"
+                    MenuIcon = "palette"
                 },
                 new PluginPageInfo
                 {
